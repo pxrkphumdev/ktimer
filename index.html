@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/tailwind-3.2.1.js"></script>
+  <script src="js/record.js" defer></script>
+  <script src="js/countdown.js" defer></script>
+  <link rel="stylesheet" href="css/countdown.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="min-h-full">
+    <nav class="bg-gray-800">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <!-- <img class="w-8 h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
+            </div>
+            <div class="hidden md:block">
+              <div class="flex items-baseline ml-10 space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">Timer - PxrkphumDEV</a>
+                <!-- <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Team</a>
+                <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Projects</a>
+                <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Calendar</a>
+                <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Reports</a> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div class="hidden md:block">
+            <div class="flex items-center ml-4 md:ml-6">
+              <button type="button" class="p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="sr-only">View notifications</span>
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+              </button>
+            </div>
+          </div> -->
+          <div class="flex -mr-2 md:hidden">
+            <!-- Mobile menu button -->
+            <button type="button" class="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-800 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+
+              <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+ 
+              <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <header class="bg-white shadow">
+      <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h1 id="datetime" class="flex justify-between text-7xl tracking-normal font-bold text-gray-900">Dashboard</h1>
+      </div>
+    </header>
+    <main>
+      <div class="flex items-center justify-center gap-6 p-4">
+        <div id="countdown1"></div>
+        <div id="countdown2"></div>
+        <div id="countdown3"></div>
+        <div id="countdown4"></div>
+      </div>
+      <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="px-4 py-6 sm:px-0">
+          <div class="flex flex-col">
+            <div class="flex items-center justify-between">
+              <div class="inline-flex">
+                <h1>Start</h1>
+                <div id="timer-start" class="px-2 font-bold"></div>
+                <div id="timer-stop" class="hidden"></div>
+              </div>
+              <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                <button id="start" class="rounded-l inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0">Start</button>
+                <button id="stop" class="hidden rounded-l inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0">Stop</button>
+                <button id="pause" class="hidden inline-block px-6 py-2.5 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase hover:bg-yellow-700 focus:bg-yellow-700 focus:outline-none focus:ring-0">Pause</button>
+                <button id="continue" class="hidden inline-block px-6 py-2.5 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase hover:bg-yellow-700 focus:bg-yellow-700 focus:outline-none focus:ring-0">Continue</button>
+                <!-- <button id="reset" class="inline-block px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-0">Reset</button> -->
+                <button id="clear" class="rounded-r inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase hover:bg-black-700 focus:bg-black-700 focus:outline-none focus:ring-0">Clear</button>
+              </div>
+            </div>
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full py-4 sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full text-center">
+                    <thead class="bg-gray-800 border-b">
+                      <tr>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          #
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          Duration
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          Start
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          End
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          Ramark
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-sm font-medium text-white">
+                          
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody id="timer-list">
+                      <!-- Timer list here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

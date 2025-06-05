@@ -1,0 +1,62 @@
+{
+  "ud"  : ["denied U/D"],
+  "da" : ["NKDA"],
+  "cc"  : ["ปวดฟัน", "ต้องการอุดฟัน", "ต้องการถอนฟัน", "มาทำฟันตามนัด"],
+  "pi"  : "",
+  "location" : {
+    "tooth" : [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48],
+    "surface" : ["M", "D", "B", "La", "Li", "Pa", "O", "I"]
+  },
+  "io"  : {
+    "size" : ["small", "medium", "large"],
+    "color" : ["black", "brown", "white", "yellowish"],
+    "appearance" : ["cavity", "CF", "AF", "crater-like lesion", "calculus deposit"],
+    "quality" : ["proper margin", "defective margin", "partial dislodgement of restoration", "complete dislodgement of restoration"],
+    "extend" : ["limited to enamel", "extend to dentine", "exposed pulp"],
+    "mobility" : [1, 2, 3],
+    "airblowing" : ["positive", "negative"],
+    "exploration" : ["positive", "negative"],
+    "palpation" : ["positive", "negative"],
+    "percussion" : ["positive", "negative"],
+    "nearby" : ["gingival abscess", "sinus tract opening", "non-occluded tooth"]
+  },
+  "dx" : {
+    "dxText" : {
+      "crown" : [
+        "Deep pits & fissure",
+        "Dental caries",
+        "Gingivitis",
+        "Reversible pulpitis",
+        "Pulp necrosis"
+      ],
+      "apical" : [
+        "Symptomatic apical periodontitis",
+        "Asymptomatic apical periodontitis",
+        "Acute apical abscess",
+        "Chonic apical abscess",
+        "Gingivitis",
+        "Chronic gingivitis"
+      ]
+    }
+  },
+  "tx" : {
+    "treatment" : {
+      "prevention" : ["", "Sealant", "PRR", "Fluoride vanish"],
+      "operation" : {
+        "rc" : ["","Remove caries"],
+        "prep" : ["", "prep", "remove old restoration"],
+        "etching" : ["", "apply dentine conditioner", "etch"],
+        "conditioner" : ["", "apply dentine conditioner", "primer + bonding", "bonding"],
+        "filling" : {
+          "material": ["", "CF", "AF", "GI"],
+          "color": ["", "A2", "A3", "A3.5", "A4"]
+        }
+      },
+      "surgery" : {
+        "op" : ["", "Extraction"],
+        "la" : ["", "2% Lidocaine + 1:100,000 epinephine", "3% Meprivacaine + 1:100,000 epinephine", "4% Articaine + 1:100,000 epinephine"]
+      },
+      "perio" : ["", "Scaling", "Scaling + Polising"]
+    }
+  }
+}
